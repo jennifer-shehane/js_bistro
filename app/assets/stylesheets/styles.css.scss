@@ -1,0 +1,4 @@
+html							{  @include establish-baseline;  }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td, .button, span  { @include adjust-font-size-to(1.8rem); }
+.container 										{  max-width: 960px; margin: 0 auto;}
+header									{  font-family: 'Tangerine', cursive ; font-weight: 700; @include adjust-font-size-to(7.0rem); @include rhythm(1, 1, 1, 1, 7.0rem); }
