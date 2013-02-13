@@ -4,9 +4,8 @@ $base-font-size: 18px;
 $base-line-height: 27px;
 
 @mixin white-text-shadow 					{  @include single-text-shadow($white, 0px, 1px, 0px);  }
-@mixin dark-text-shadow 					{  @include single-text-shadow(rgba($black, 1), 0, -1px, 0);  }
-@mixin dark-text-shadow-thick				{  @include single-text-shadow(rgba($black, 1), 0, -2px, 0);  }
+@mixin dark-text-shadow 					{  @include single-text-shadow(rgba($black, 0.5), 0, -1px, 0);  }
 
-$aqua: #3281C3;
+$aqua: #abd7d8;
 $gray: #f1f0f0;
 $orange: #db712a;
