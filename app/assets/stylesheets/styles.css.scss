@@ -1,4 +1,17 @@
-html							{  @include establish-baseline;  }
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td, .button, span  { @include adjust-font-size-to(1.8rem); }
-.container 										{  max-width: 960px; margin: 0 auto;}
-header									{  font-family: 'Tangerine', cursive ; font-weight: 700; @include adjust-font-size-to(7.0rem); @include rhythm(1, 1, 1, 1, 7.0rem); }
+html											{  @include establish-baseline; background-color: $gray; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  }
+body 											{  background-color: $gray; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td, .button, span, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea { @include adjust-font-size-to(1.8rem); }
+.container 										{  max-width: 960px; margin: 0 auto; }
+header											{  font-family: 'Tangerine', cursive ; font-weight: 700; @include adjust-font-size-to(7.0rem); @include rhythm(1, 1, 1, 1, 7.0rem); color: $orange; @include white-text-shadow;}
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"],
+ input[type="url"], textarea 					{ @include border-radius; border: 2px solid #999; @include rhythm(1, 0, 0, 1); @include adjust-leading-to(3, 1.8rem); height: 3.75rem; }
+.button											{  @include dark-text-shadow; font-weight: 400; background-color: $orange; border: 1px solid shade($orange, 20%);
+	&:hover, &:focus 							{   background-color: shade($orange, 10%);  }
+	&.medium 									{  @include adjust-font-size-to(1.8rem); @include rhythm(0, 0.25, 0.25, 0, 1.8rem); }
+}
+.help-block 									{  color: #666; }
+.form-wrapper 									{  background-color: #fff; @include border-radius; @include rhythm(0, 1, 1, 0); width: 100%; padding-right: 30px; padding-left: 30px; }
+form 											{  overflow: auto; @include rhythm(0, 0, 0, 0);}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, input:-ms-input-placeholder, input:-moz-placeholder, input::-moz-placeholder, textarea::-moz-placeholder, input:-moz-placeholder, textarea:-moz-placeholder 					{  color: #bbb;   }
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder, 																										{  color: transparent;  }				
+input:-moz-placeholder, textarea:-moz-placeholder, input::-moz-placeholder, textarea::-moz-placeholder, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, input:-ms-input-placeholder										{  color: #bbb;   }
