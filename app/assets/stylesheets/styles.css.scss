@@ -12,6 +12,6 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 .help-block 									{  color: #666; }
 .form-wrapper 									{  background-color: #fff; @include border-radius; @include rhythm(0, 1, 1, 0); width: 100%; padding-right: 30px; padding-left: 30px; }
 form 											{  overflow: auto; @include rhythm(0, 0, 0, 0);}
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, input:-ms-input-placeholder, input:-moz-placeholder, input::-moz-placeholder, textarea::-moz-placeholder, input:-moz-placeholder, textarea:-moz-placeholder 					{  color: #bbb;   }
-input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder, 																										{  color: transparent;  }				
-input:-moz-placeholder, textarea:-moz-placeholder, input::-moz-placeholder, textarea::-moz-placeholder, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, input:-ms-input-placeholder										{  color: #bbb;   }
+input				 							{  
+	&:-moz-placeholder							{  color: #bbb;  }
+}
