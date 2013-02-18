@@ -1,7 +1,9 @@
 html											{  @include establish-baseline; background-color: $gray; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  }
-body 											{  background-color: $gray; }
+body 											{  color: #555; background-color: $gray; }
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td, .button, span, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea { @include adjust-font-size-to(1.8rem); }
 .container 										{  max-width: 960px; margin: 0 auto; }
+h2 												{  color: #555; background-color: #fff; @include rhythm(1, 0, 0, 1); padding-left: 1.5rem; padding-right: 1.5remx;  }
+h3 												{  color: #666; @include rhythm(0, 0, 0, 0); @include white-text-shadow; padding-left: 1.5rem; padding-right: 1.5rem;  }
 header											{  font-family: 'Tangerine', cursive ; font-weight: 700; @include adjust-font-size-to(7.0rem); @include rhythm(1, 1, 1, 1, 7.0rem); color: $orange; @include white-text-shadow;}
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"],
  input[type="url"], textarea 					{ @include border-radius; border: 2px solid #999; @include rhythm(1, 0, 0, 1); @include adjust-leading-to(3, 1.8rem); height: 3.75rem; }
@@ -9,9 +11,31 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 	&:hover, &:focus 							{   background-color: shade($orange, 10%);  }
 	&.medium 									{  @include adjust-font-size-to(1.8rem); @include rhythm(0, 0.25, 0.25, 0, 1.8rem); }
 }
-.help-block 									{  color: #666; }
-.form-wrapper 									{  background-color: #fff; @include border-radius; @include rhythm(0, 1, 1, 0); width: 100%; padding-right: 30px; padding-left: 30px; }
+.form-wrapper 									{  background-color: #fff; @include border-radius; @include rhythm(0, 1, 1, 5); width: 100%; padding-right: 30px; padding-left: 30px; }
 form 											{  overflow: auto; @include rhythm(0, 0, 0, 0);}
 input				 							{  
 	&:-moz-placeholder							{  color: #bbb;  }
 }
+.pending-slot, .confirmed-slot					{  position: relative; background-color: #fff; @include rhythm(1, 0, 0, 1); @include border-radius; border: 2px solid #bbb; overflow: hidden; @include white-text-shadow; 
+	&:hover 									{  background-color: tint($orange, 85%); cursor: pointer; }
+}
+#pending-reservations [class*="column"] + [class*="column"]:last-child {
+    float: left;
+}
+.number-in-party 								{  width: 30%; float: left; color: $orange; @include adjust-font-size-to(5rem); font-weight: bold; text-align: center;  }
+.phone-number 									{   }
+.contact 										{  width: 70%; float: left; }
+.name-in-party 									{  font-weight: bold;}
+.pending-slot 									{  @include rhythm(1, 1, 1, 1); }
+.available-percentage 							{  background-color: $aqua; position: absolute; height: 100%; @include opacity(0.2);}
+.available-number 								{  text-align: center; @include adjust-font-size-to(2.5rem); @include rhythm(0, 0, 2, 0); }
+.time-slot 										{  padding-left: 1.5rem; }
+.confirmed-slot 								{  color: #888; 
+	&.disabled 									{  color: #333; border: 2px solid #888; 
+		&:hover 								{  cursor: default; background-color: #fff; }
+		.available-percentage 					{  @include opacity(0.4); }
+		.time-slot 								{  color: #333; }
+		.available-number 						{  color: #333; text-transform: uppercase;  }
+	}
+}
+footer 											{  @include rhythm(1, 0, 0, 1); background-color: #f0f0f0; color: #bbb; @include white-text-shadow; text-align: center; }
