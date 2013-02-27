@@ -9,16 +9,20 @@
 		 	<div class="form-wrapper">
 				<h3>Enter a Reservation</h3>
 				<form>
+<!-- 	------------Name text input------------ -->
 					<input type="text" name="name" placeholder="Name">
+<!-- 	------------Phone number input------------ -->
 					<input type="tel" name="phone" placeholder="Phone Number">
+<!-- 	------------Number in party input------------ -->
 					<input type="number" name="number" placeholder="Number in Party">
 					<button class="button radius medium eight columns offset-by-four">Add Reservation</button>
 				</form>
 			</div>	
 		</div>	
+<!-- 	------------Pending Reservations------------ -->
 		<div id="pending-reservations" class="row">
 			<h2>Pending Reservations</h2>
-			<h3>Select a pending reservation & assign it to a time slot.</h3>
+<!-- 	------------Pending Time Slot------------ -->	
 			<div class="four columns">
 				<div class="pending-slot">
 					<div class="number-in-party">8</div>
@@ -28,8 +32,9 @@
 					</div>
 				</div>	
 			</div>
+<!-- 	------------End Pending Time Slot------------ -->	
 			<div class="four columns">
-				<div class="pending-slot">
+				<div class="pending-slot selected">
 					<div class="number-in-party">2</div>
 					<div class="contact">
 						<div class="name-in-party">Selina Kyle</div>
@@ -56,15 +61,20 @@
 				</div>
 			</div>
 		</div>
+<!-- 	------------End Pending Reservations------------ -->		
+<!-- 	------------Confirmed Reservations------------ -->		
 		<div class="row">
-			<h2>Confirmed Reservation</h2>
+			<h2>Confirmed Reservations</h2>
+<!-- 	------------Confirmed Time Slot (Open)------------ -->	
 			<div class="four columns">
-				<div class="confirmed-slot">
+				<div class="confirmed-slot">	
 					<div class="available-percentage" style="width: 16%;"></div>
 					<div class="time-slot">12:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">42 Available</div>
 				</div>
 			</div>
+<!-- 	------------End Confirmed Time Slot (Open)------------ -->	
 			<div class="four columns">
 				<div class="confirmed-slot">
 					<div class="available-percentage" style="width: 0%;"></div>
@@ -73,23 +83,28 @@
 				</div>
 			</div>
 			<div class="four columns">
-				<div class="confirmed-slot">
+				<div class="confirmed-slot selected">
 					<div class="available-percentage" style="width: 10%;"></div>
 					<div class="time-slot">2:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">45 Available</div>
 				</div>
 			</div>
+<!-- 	------------Confirmed Time Slot (Closed)------------ -->	
 			<div class="four columns">
 				<div class="confirmed-slot disabled">
 					<div class="available-percentage" style="width: 100%;"></div>
 					<div class="time-slot">3:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">full</div>
 				</div>
 			</div>
+<!-- 	------------End Confirmed Time Slot (Closed)------------ -->	
 			<div class="four columns">
 				<div class="confirmed-slot">
 					<div class="available-percentage" style="width: 40%;"></div>
 					<div class="time-slot">4:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">30 Available</div>
 				</div>
 			</div>
@@ -97,6 +112,7 @@
 				<div class="confirmed-slot">
 					<div class="available-percentage" style="width: 48%;"></div>
 					<div class="time-slot">5:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">26 Available</div>
 				</div>
 			</div>
@@ -104,6 +120,7 @@
 				<div class="confirmed-slot">
 					<div class="available-percentage" style="width: 48%;"></div>
 					<div class="time-slot">6:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">26 Available</div>
 				</div>
 			</div>
@@ -111,6 +128,7 @@
 				<div class="confirmed-slot">
 					<div class="available-percentage" style="width: 70%;"></div>
 					<div class="time-slot">7:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">15 Available</div>
 				</div>
 			</div>
@@ -118,6 +136,7 @@
 				<div class="confirmed-slot disabled">
 					<div class="available-percentage" style="width: 100%;"></div>
 					<div class="time-slot">8:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">full</div>
 				</div>
 			</div>
@@ -125,6 +144,7 @@
 				<div class="confirmed-slot disabled">
 					<div class="available-percentage" style="width: 100%;"></div>
 					<div class="time-slot">9:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">full</div>
 				</div>
 			</div>
@@ -132,6 +152,7 @@
 				<div class="confirmed-slot disabled">
 					<div class="available-percentage" style="width: 100%;"></div>
 					<div class="time-slot">10:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">full</div>
 				</div>
 			</div>
@@ -139,12 +160,14 @@
 				<div class="confirmed-slot disabled">
 					<div class="available-percentage" style="width: 100%;"></div>
 					<div class="time-slot">11:00pm</div>
+					<a class="show-reservation">Reservations</a>
 					<div class="available-number">full</div>
 				</div>
 			</div>
 		</div>
 	</div>	
 </div>
+<!-- 	------------End Confirmed Reservations------------ -->	
 <footer>
 	<div class="container">
 		JS Framework Shootout 2013
