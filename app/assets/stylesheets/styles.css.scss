@@ -25,7 +25,7 @@ h2 												{  @include white-text-shadow; @include adjust-font-size-to(2.5re
 h3 												{  color: #666; margin: 0; @include white-text-shadow; padding-left: rhythm(0.25);  padding-right: rhythm(0.25);   }
 header											{  font-family: 'Tangerine', cursive ; font-weight: 700; @include adjust-font-size-to(7.0rem); @include rhythm(1, 1, 1, 3, 7.0rem); color: $orange; @include white-text-shadow;}
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"],
- input[type="url"], textarea 					{  @include border-radius; border: 2px solid #999; margin-top: rhythm(1); margin-bottom: rhythm(1); @include adjust-leading-to(3, 1.8rem); height: 3.75rem; }
+ input[type="url"], textarea 					{  @include border-radius; border: 2px solid #999; margin-top: rhythm(1); margin-bottom: rhythm(1); height: 3.75rem; }
 .button											{  font-weight: 400; background-color: $orange; border: none; @include no-box-shadow;
 	&:hover, &:focus 							{  background-color: shade($orange, 10%); }
 	&.medium 									{  @include adjust-font-size-to(1.8rem); padding: rhythm(0.25, 1.8rem); }
