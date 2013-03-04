@@ -1,14 +1,33 @@
-html											{  @include establish-baseline; background-color: $gray; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  }
-body 											{  background-size: 20px 20px; color: #555; background-color: #f2f2f2; background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);}
+html											{  @include establish-baseline; background-color: #f9f9f9; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  }
+body 											{  background-size: 20px 20px; color: #555; background-color: #f9f9f9; background-image: -webkit-gradient(linear, 0 100%, 100% 0,
+									color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent),
+									color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)),
+									color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
+			 						to(transparent));
+			background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);
+			background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);
+			background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);
+			background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+								transparent 75%, transparent);}
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td, .button, span, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea { @include adjust-font-size-to(1.8rem); }
 .container 										{  max-width: 960px; margin: 0 auto; }
-h2 												{  @include adjust-font-size-to(2.5rem); color: #555; margin-top: rhythm(1, 2.5rem); margin-bottom: rhythm(1, 2.5rem);  }
+h2 												{  @include white-text-shadow; @include adjust-font-size-to(2.5rem); color: #555; margin-top: rhythm(1, 2.5rem); margin-right: rhythm(1, 2.5rem); margin-left: rhythm(1, 2.5rem); margin-bottom: 0;  }
 h3 												{  color: #666; margin: 0; @include white-text-shadow; padding-left: rhythm(0.25);  padding-right: rhythm(0.25);   }
 header											{  font-family: 'Tangerine', cursive ; font-weight: 700; @include adjust-font-size-to(7.0rem); @include rhythm(1, 1, 1, 3, 7.0rem); color: $orange; @include white-text-shadow;}
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"],
  input[type="url"], textarea 					{  @include border-radius; border: 2px solid #999; margin-top: rhythm(1); margin-bottom: rhythm(1); @include adjust-leading-to(3, 1.8rem); height: 3.75rem; }
 .button											{  font-weight: 400; background-color: $orange; border: none; @include no-box-shadow;
-	&:hover, &:focus 							{   }
+	&:hover, &:focus 							{  background-color: shade($orange, 10%); }
 	&.medium 									{  @include adjust-font-size-to(1.8rem); padding: rhythm(0.25, 1.8rem); }
 }
 .form-wrapper 									{  @include box-shadow(rgba(black, 0.1) 0 3px 0); background-color: #fff; @include border-radius; @include rhythm(0, 1, 1.25, 5); width: 100%; padding-right: 30px; padding-left: 30px; }
@@ -16,7 +35,8 @@ form 											{  overflow: auto; @include rhythm(0, 0, 0, 0);}
 input				 							{  
 	&:-moz-placeholder							{  color: #bbb;  }
 }
-.show-reservation 								{  font-weight: 500; display: none; @include adjust-font-size-to(1.2rem); padding-top: rhythm(0.5, 1.2rem); padding-right: rhythm(1, 1.2rem); float: right;  }
+
+.list-reservations 								{  position: relative; z-index: 1; font-weight: 500; display: none; @include adjust-font-size-to(1.2rem); padding-top: rhythm(0.5, 1.2rem); padding-right: rhythm(1, 1.2rem); float: right;  }
 .pending-slot, .confirmed-slot					{  color: #666; @include box-shadow(rgba(black, 0.1) 0 3px 0); position: relative; background-color: #fff; @include rhythm(1, 0, 0, 1); @include border-radius; overflow: hidden; @include white-text-shadow; 
 	&:hover 									{  background-color: tint(yellow, 85%); @include single-transition(background-color, 0.1s, linear); cursor: pointer; 
 	}
@@ -24,7 +44,27 @@ input				 							{
 		&:hover 								{  background-color: tint(yellow, 85%); @include single-transition(background-color, 0.1s, linear); cursor: pointer; }
 	}
 }
-
+#pending-reservations, #confirmed-reservations 	{ @include box-shadow(rgba(#4c5657, 0.1) 0 3px 0); padding-bottom: rhythm(0.5); padding-right: rhythm(1.5); padding-left: rhythm(1.5); margin-bottom: rhythm(1); margin-top: rhythm(2);@include border-radius(10px); background-color: #edf1f1; background-size: 20px 20px; background-image: -webkit-gradient(linear, 0 100%, 100% 0,
+									color-stop(.25, rgba(255, 255, 255, .1)), color-stop(.25, transparent),
+									color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .1)),
+									color-stop(.75, rgba(255, 255, 255, .1)), color-stop(.75, transparent),
+			 						to(transparent));
+			background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .1) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%,
+								transparent 75%, transparent);
+			background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .1) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%,
+								transparent 75%, transparent);
+			background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, .1) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%,
+								transparent 75%, transparent);
+			background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .1) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%,
+								transparent 75%, transparent);
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, .1) 25%, transparent 25%,
+								transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%,
+								transparent 75%, transparent);
+}
 #pending-reservations [class*="column"] + [class*="column"]:last-child {  float: left;  }
 .number-in-party 								{  width: 25%; float: left; color: $orange; @include adjust-font-size-to(5rem); font-weight: bold; text-align: center;  }
 .phone-number 									{  margin-top: rhythm(-0.2); }
@@ -34,15 +74,14 @@ input				 							{
 .available-percentage 							{  background-color: $aqua; position: absolute; height: 100%; @include opacity(0.2);}
 .available-number 								{  clear: both; text-align: center; @include adjust-font-size-to(2.5rem); padding-bottom: rhythm(2, 2.5rem); }
 .time-slot 										{  width: 20%; @include adjust-font-size-to(1.4rem); padding-left: rhythm(1, 1.4rem); float: left;  }
-
-.confirmed-slot 								{  color: #666; 
+.confirmed-slot 								{  color: #546d72; 
 	&.disabled 									{  
 		&:hover 								{  cursor: default; background-color: #fff; }
-		.available-percentage 					{  @include opacity(0.55); }
-		.time-slot 								{  color: #333; }
-		.available-number 						{  color: #333; text-transform: uppercase; }
+		.available-percentage 					{  }
+		.time-slot 								{  color: #415458; }
+		.available-number 						{  color: #415458; text-transform: uppercase; }
 	}
 }
-.confirmed-slot:hover .show-reservation 		{  display: block; @include single-transition(display, 0.2s, linear); }
-.confirmed-slot.disabled a.show-reservation 	{  display: block; cursor: pointer; }
+.confirmed-slot:hover .list-reservations 		{  display: block; @include single-transition(display, 0.2s, linear); }
+.confirmed-slot.disabled a 						{  display: block; cursor: pointer; }
 footer 											{  margin: rhythm(1); color: #bbb; @include white-text-shadow; text-align: center; }
